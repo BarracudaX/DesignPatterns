@@ -40,5 +40,7 @@ public abstract class Pizza {
         System.out.println("Place pizza in official PizzaStore box.");
     }
 
-
+    public String getName() {
+        return name;
+    }
 }
