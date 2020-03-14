@@ -34,7 +34,7 @@ public class StatisticListDecorator<E> implements List<E> {
 
     @Override
     public Iterator<E> iterator() {
-        increaseCounter("iterator");
+        increaseCounter("iteratorAndComposite");
         return wrappedList.iterator();
     }
 
