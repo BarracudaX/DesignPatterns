@@ -2,7 +2,9 @@ package state;
 
 public class WinnerState implements State {
 
-    private final GumballMachine machine;
+    private transient final GumballMachine machine;
+
+    private final String stateName = "Winner State";
 
     public WinnerState(GumballMachine machine) {
         this.machine = machine;
@@ -39,5 +41,10 @@ public class WinnerState implements State {
                 machine.setState(machine.getNoQuarterState());
             }
         }
+    }
+
+    @Override
+    public String getStateName() {
+        return stateName;
     }
 }

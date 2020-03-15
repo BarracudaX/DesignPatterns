@@ -3,8 +3,12 @@ package state;
 import java.util.Random;
 
 public class HasQuarterState implements State {
-    private final GumballMachine machine;
-    private final Random random = new Random(System.currentTimeMillis());
+
+    private transient final GumballMachine machine;
+
+    private transient final Random random = new Random(System.currentTimeMillis());
+
+    private final String stateName = "Has Quarter State";
 
     public HasQuarterState(GumballMachine machine) {
         this.machine = machine;
@@ -35,5 +39,10 @@ public class HasQuarterState implements State {
     @Override
     public void dispense() {
         System.out.println("No gumball dispensed");
+    }
+
+    @Override
+    public String getStateName() {
+        return stateName;
     }
 }

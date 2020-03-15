@@ -2,7 +2,9 @@ package state;
 
 public class NoQuarterState implements State {
 
-    private final GumballMachine machine;
+    private transient final GumballMachine machine;
+
+    private transient final String stateName = "No Quarter State";
 
     public NoQuarterState(GumballMachine machine) {
         this.machine = machine;
@@ -27,5 +29,10 @@ public class NoQuarterState implements State {
     @Override
     public void dispense() {
         System.out.println("You need to pay first.");
+    }
+
+    @Override
+    public String getStateName() {
+        return stateName;
     }
 }

@@ -1,6 +1,8 @@
 package state;
 
-public interface State {
+import java.io.Serializable;
+
+public interface State extends Serializable {
 
     void insertQuarter();
 
@@ -15,5 +17,7 @@ public interface State {
             System.out.println("I don't need to refill myself.");
         }
     }
+
+    String getStateName();
 
 }
